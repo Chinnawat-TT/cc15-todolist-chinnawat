@@ -1,72 +1,64 @@
-@import "../index.scss";
+@import '../index.scss';
 
-.todo{
+.todo {
   display: grid;
   grid-template-rows: $header-height calc(100vh - $header-height);
   grid-template-columns: $sidebar-width calc(100vw - $sidebar-width);
-
-  &__header{  
-    // grid-row-start: 1;     
-    // grid-row-end: 2;
-    // grid-column-start: 1;
-    // grid-column-end: -1;
+  &__header {
     grid-row: 1/2;
     grid-column: 1/-1;
   }
-
-  &__sidebar{
-    // grid-row-start: 2;
-    // grid-row-end: -1;
-    // grid-column-start: 1;
-    // grid-column-end: 2;
+  &__sidebar {
     grid-row: 2/-1;
     grid-column: 1 / span 1;
   }
   &__content {
-    // grid-row-start: 2;
-    // grid-row-end: -1;
-    // grid-column-start: 2;
-    // grid-column-end: -1;
     grid-row: 2/-1;
     grid-column: 2/-1;
   }
 }
 
-
-.sidebar{
+.sidebar {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
   padding: 20px 30px;
-  // background-color: antiquewhite;
+  // background-color: wheat;
   height: calc(100vh - $header-height);
-
 }
-//Block
-.list{
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  //Element
-  &__item{
+
+// SCSS : mixins and extends concept
+
+// BLOCK
+.accordion {
+  // ELEMENT
+  &__item {
     display: flex;
     align-items: center;
     gap: 15px;
-    font-size: 2rem;
+    font-size: 1.8rem;
     padding: 10px;
     border-radius: 4px;
-    cursor: pointer;
-            //modify
-            &:hover{
-              background-color: gray;
-            }
-        
-            &__text{
-              font-weight: 500;
+    font-weight: 900;
 
-            }
+    // MODIFIER
+    &__icon {
+      cursor: pointer;
+      transition: 1s;
+    }
+    &__active {
+      transform: rotate(-90deg);
+    }
 
-
+    &__text {
+      font-weight: inherit;
+    }
   }
+}
 
+.todo__container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
 }

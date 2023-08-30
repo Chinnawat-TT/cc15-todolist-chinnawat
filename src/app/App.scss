@@ -33,3 +33,40 @@
 }
 
 
+.sidebar{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px 30px;
+  // background-color: antiquewhite;
+  height: calc(100vh - $header-height);
+
+}
+//Block
+.list{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  //Element
+  &__item{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 2rem;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+            //modify
+            &:hover{
+              background-color: gray;
+            }
+        
+            &__text{
+              font-weight: 500;
+
+            }
+
+
+  }
+
+}

@@ -3,6 +3,8 @@ import './App.scss';
 import { FaHome } from 'react-icons/fa';
 import Header from '../components/Header';
 import { FaInbox, FaCalendar, FaCalendarAlt, FaChevronDown } from 'react-icons/fa';
+import ListItem  from '../components/ListItem.jsx';
+
 function App() {
     return (
         <div className='todo'>
@@ -13,18 +15,9 @@ function App() {
             <aside className='sidebar'>
                     <section className='sidebar__category'>
                     <ul className='list'>
-                        <li className='list__item'>
-                                <FaInbox className='list__item__icon'/>
-                            <p className='list__item__text'>Inbox</p>
-                        </li>
-                        <li className='list__item'>
-                                <FaCalendar className='list__item__icon'/>
-                            <p className='list__item__text'>Today</p>
-                        </li>
-                        <li className='list__item'>
-                                <FaCalendarAlt className='list__item__icon'/>
-                            <p className='list__item__text'>Next 7 day</p>
-                        </li>
+                        <ListItem text="Inbox" icon={<FaInbox className='list__item__icon'/>}/>
+                        <ListItem text="Today" icon={<FaCalendar className='list__item__icon'/>}/>
+                        <ListItem text="Next 7 day" icon={<FaCalendarAlt className='list__item__icon'/>}/>
                     </ul>
                     </section>
                     <section className='sidebar__category2'>2</section>

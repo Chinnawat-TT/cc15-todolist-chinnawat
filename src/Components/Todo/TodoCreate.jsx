@@ -39,6 +39,10 @@ b= 9
 /*
 #CC5 React State  (1 ในฟังก์ชั่นของกลุ่ม  React Hook)
 const [ state,setState ] = useState(initiaState:any)
+  element 1 current state
+  element 2 Fn สำหรับ setState
+  เมื่อ  state  เปลี่ยน  Function Component จะ  Rerender
+  Rerender 1 ครั้ง  == code ทั้งหมดใน FC จะถูกรันใหม่ 1 ครั้ง
 */
 
 // #1 : FC = Function Component (Render)
@@ -56,7 +60,7 @@ function TodoCreate() {
   return (
     <>
       {isOpenForm ? (
-       <TodoForm />
+       <TodoForm textSubmit="Add Task" setIsOpenForm={setIsOpenForm}/> //  ส่ง ฟังก์ชั้นของ setstate ไปใน Todoform ผ่านตัวเเปร setIsOpen ในรูปเเบบ props
       ) : (<div 
         className={styles.todo__create}
         onClick={handleClick}>
